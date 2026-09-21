@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday Zanjouji 🎂</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ==================================================
+     MUSIC
+================================================== -->
+
+<audio id="birthdayMusic" loop>
+    <source src="music/birthday.m4a" type="audio/mp4">
+</audio>
+
+
+<!-- ==================================================
+     FLOATING PARTY EMOJIS
+================================================== -->
+
+<div id="partyEmojis"></div>
+
+
+<!-- ==================================================
+     INTRO
+================================================== -->
+
+<section id="intro" class="page active">
+
+    <div class="intro-container">
+
+        <div class="welcome-badge">
+            <span>هدية صغيرة</span>
+            <strong>لـ زنجوجي 🤍</strong>
+        </div>
+
+        <div class="intro-gif-container">
+
+            <img
+                src="images/kakashi.gif"
+                id="kakashiGif"
+                class="kakashi-gif"
+                alt="Kakashi"
+            >
+
+            <div class="intro-gif-caption">
+                دقيقة واحدة... كاكاشي عنده شيء لك 👀
+            </div>
+        </div>
+
+
+        <div id="birthdayReveal" class="birthday-reveal">
+
+            <div class="cake-container">
+
+                <img
+                    src="images/cake.png"
+                    class="cake"
+                    alt="Birthday Cake"
+                >
+
+            </div>
+
+            <h1>
+                🎉 عيد ميلاد سعيد زنجوجي 🎉
+            </h1>
+
+            <div id="introMood" class="intro-mood">
+                16 سنة! 🎂
+            </div>
+
+            <p>
+                احتفال صغير، بس مليان حب وفرح ✨
+            </p>
+
+            <div class="intro-promise">
+                <span>🎁</span>
+                ثلاث أشياء صغيرة حضرتها لك
+                <span>🎁</span>
+            </div>
+
+            <button
+                class="music-button"
+                onclick="startBirthday()"
+            >
+                🎵 تشغيل الاحتفال
+            </button>
+
+        </div>
+
+        <button
+            class="skip-button"
+            onclick="revealBirthday()"
+        >
+            جاهز للمفاجأة؟ افتحها الآن ✨
+        </button>
+
+
+        <div id="introNavigation" class="navigation hidden">
+
+            <button
+                class="nav-button previous disabled"
+            >
+                السابق
+            </button>
+
+            <button
+                class="nav-button next"
+                onclick="goTo('gifts')"
+            >
+                التالي
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     GIFTS
+================================================== -->
+
+<section id="gifts" class="page">
+
+    <div class="page-container">
+
+        <h1 class="section-title">
+            🎁 عندي لك ثلاث هدايا
+        </h1>
+
+        <p class="section-subtitle">
+            اختر ما تريد أولًا 👀
+        </p>
+
+        <div class="gift-intro">
+            <span class="gift-intro-spark">✦</span>
+            <div>
+                <strong>اختر اللي يعجبك أولًا 👀</strong>
+                <p>كل واحدة فيها شيء مختلف، والباقي عليك تكتشفه 🤍</p>
+            </div>
+            <span class="gift-intro-spark">✦</span>
+        </div>
+
+
+        <div class="gifts-container">
+
+
+            <!-- MESSAGE -->
+
+            <div
+                class="gift-card"
+                onclick="goTo('message')"
+            >
+
+                <span class="gift-tag">رسالة من القلب</span>
+
+                <div class="gift-icon">
+                    💌
+                </div>
+
+                <h2>
+                    المعايدة
+                </h2>
+
+                <p>
+                    أكيد لن نهرب من فقرة المعايدة 😂
+                </p>
+
+                <button>
+                    افتح
+                </button>
+
+            </div>
+
+
+            <!-- GAME -->
+
+            <div
+                class="gift-card"
+                onclick="goTo('game')"
+            >
+
+                <span class="gift-tag">تحدّي كاكاشي</span>
+
+                <div class="gift-icon">
+                    🎮
+                </div>
+
+                <h2>
+                    Kakashi Run
+                </h2>
+
+                <p>
+                    كم ثانية ستصمد؟
+                </p>
+
+                <button>
+                    العب
+                </button>
+
+            </div>
+
+
+            <!-- LIBRARY -->
+
+            <div
+                class="gift-card"
+                onclick="goTo('library')"
+            >
+
+                <span class="gift-tag">افتح الذكريات</span>
+
+                <div class="gift-icon">
+                    📚
+                </div>
+
+                <h2>
+                    مكتبة الذكريات
+                </h2>
+
+                <p>
+                    صور وفيديوهات كاكاشي
+                </p>
+
+                <button>
+                    افتح
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="navigation">
+
+            <button
+                class="nav-button previous"
+                onclick="goTo('intro')"
+            >
+                السابق
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     MESSAGE
+================================================== -->
+
+<section id="message" class="page">
+
+    <div class="page-container">
+
+        <div class="letter">
+
+            <div class="letter-decoration">
+                🍃
+            </div>
+
+            <h1>
+                عيد ميلاد سعيد زنجوجي 🤍
+            </h1>
+
+            <div class="letter-line"></div>
+
+
+            <p>
+                كل عام وانت بخير، ومبروك وصولك للـ16 🎂
+                عقبال الـ100 إن شاء الله.
+            </p>
+
+            <p>
+                أتمنى تكون استمتعت بحفلتك وبهديتك دي،
+                والأهم أتمنى أنك ابتسمت وأنت تشوف كل هذا.
+            </p>
+
+            <p>
+                المهم صراحة ما كان عندي أفكار للموقع،
+                لهيك حاولت أخليه شيء مختصر وممتع
+                أتمنى يعجبك.
+            </p>
+
+
+            <div class="letter-cake">
+                🎂
+            </div>
+
+
+            <p class="letter-final">
+                كل عام وانت بخير يا زنجوجي 🤍
+            </p>
+
+        </div>
+
+
+        <div class="navigation">
+
+            <button
+                class="nav-button previous"
+                onclick="goTo('gifts')"
+            >
+                السابق
+            </button>
+
+            <button
+                class="nav-button next"
+                onclick="goTo('game')"
+            >
+                التالي
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     GAME
+================================================== -->
+
+<section id="game" class="page">
+
+    <div class="page-container">
+
+        <h1 class="section-title">
+            🎮 Kakashi Run
+        </h1>
+
+        <p class="section-subtitle">
+            اقفز فوق الشوريكن أو انحنِ تحته
+        </p>
+
+
+        <div class="game-info">
+
+            <div>
+                الوقت:
+                <strong id="currentTime">
+                    0.0
+                </strong>
+                ثانية
+            </div>
+
+            <div>
+                أفضل نتيجة:
+                <strong id="bestTime">
+                    0.0
+                </strong>
+                ثانية
+            </div>
+
+        </div>
+
+
+        <div id="gameBoard">
+
+            <div
+                id="gameStart"
+                class="game-message"
+            >
+
+                <h2>
+                    🥷 مستعد؟
+                </h2>
+
+                <p>
+                    حاول الصمود لأطول وقت
+                </p>
+
+                <button
+                    onclick="startGame()"
+                    class="game-button"
+                >
+                    ابدأ
+                </button>
+
+            </div>
+
+
+            <div
+                id="gameOver"
+                class="game-message hidden"
+            >
+
+                <h2>
+                    💥 انتهت اللعبة
+                </h2>
+
+                <p>
+                    صمدت
+                    <strong id="finalTime">
+                        0.0
+                    </strong>
+                    ثانية
+                </p>
+
+                <p id="newRecord" class="new-record hidden">
+                    🏆 رقم قياسي جديد!
+                </p>
+
+                <button
+                    onclick="restartGame()"
+                    class="game-button"
+                >
+                    حاول مرة أخرى
+                </button>
+
+            </div>
+
+
+            <canvas
+                id="gameCanvas"
+                class="game-canvas"
+                width="960"
+                height="360"
+                aria-label="Kakashi Run game"
+            ></canvas>
+
+        </div>
+
+
+        <div class="controls">
+
+            <span>
+                ⬆️ SPACE / ↑ = قفز
+            </span>
+
+            <span>
+                ⬇️ ↓ = انحناء
+            </span>
+
+            <span>
+                📱 اسحب للأعلى أو الأسفل على الهاتف
+            </span>
+
+        </div>
+
+
+        <div class="navigation">
+
+            <button
+                class="nav-button previous"
+                onclick="goTo('gifts')"
+            >
+                السابق
+            </button>
+
+            <button
+                class="nav-button next"
+                onclick="goTo('library')"
+            >
+                التالي
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     LIBRARY
+================================================== -->
+
+<section id="library" class="page">
+
+    <div class="page-container">
+
+        <h1 class="section-title">
+            📚 مكتبة الذكريات
+        </h1>
+
+        <p class="section-subtitle">
+            صور وفيديوهات من عالم كاكاشي
+        </p>
+
+
+        <!-- TABS -->
+
+        <div class="library-tabs">
+
+            <button
+                class="library-tab active"
+                onclick="showLibrary('photos')"
+            >
+                📷 الصور
+            </button>
+
+            <button
+                class="library-tab"
+                onclick="showLibrary('videos')"
+            >
+                🎬 الفيديوهات
+            </button>
+
+        </div>
+
+
+        <!-- PHOTOS -->
+
+        <div
+            id="photosLibrary"
+            class="library-section active"
+        >
+
+            <div class="library-header">
+
+                <h2>
+                    📷 الصور
+                </h2>
+
+                <label class="add-button">
+
+                    ＋ إضافة صورة
+
+                    <input
+                        type="file"
+                        accept="image/*"
+                        onchange="addMedia(event, 'photo')"
+                        hidden
+                    >
+
+                </label>
+
+            </div>
+
+
+            <div
+                id="photosGrid"
+                class="media-grid"
+            >
+
+                <!-- DEFAULT LOCAL IMAGES -->
+
+                <div
+                    class="media-card"
+                    onclick="openViewer('images/kakashi.gif', 'image')"
+                >
+
+                    <img
+                        src="images/kakashi.gif"
+                        alt="Kakashi"
+                    >
+
+                </div>
+
+
+                <div
+                    class="media-card"
+                    onclick="openViewer('images/kakashi1.jpg', 'image')"
+                >
+
+                    <img
+                        src="images/kakashi1.jpg"
+                        alt="Kakashi"
+                    >
+
+                </div>
+
+
+                <div
+                    class="media-card"
+                    onclick="openViewer('images/kakashi2.jpg', 'image')"
+                >
+
+                    <img
+                        src="images/kakashi2.jpg"
+                        alt="Kakashi"
+                    >
+
+                </div>
+
+
+                <div
+                    class="media-card"
+                    onclick="openViewer('images/kakashi3.jpg', 'image')"
+                >
+
+                    <img
+                        src="images/kakashi3.jpg"
+                        alt="Kakashi"
+                    >
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- VIDEOS -->
+
+        <div
+            id="videosLibrary"
+            class="library-section"
+        >
+
+            <div class="library-header">
+
+                <h2>
+                    🎬 الفيديوهات
+                </h2>
+
+                <label class="add-button">
+
+                    ＋ إضافة فيديو
+
+                    <input
+                        type="file"
+                        accept="video/*"
+                        onchange="addMedia(event, 'video')"
+                        hidden
+                    >
+
+                </label>
+
+            </div>
+
+
+            <div
+                id="videosGrid"
+                class="media-grid"
+            >
+
+                <!--
+                    يمكنك وضع فيديوهاتك الأساسية هنا يدويًا:
+
+                    <div class="media-card video-card">
+                        <video controls>
+                            <source
+                                src="videos/video1.mp4"
+                                type="video/mp4"
+                            >
+                        </video>
+                    </div>
+                -->
+
+            </div>
+
+        </div>
+
+
+        <p class="library-note">
+            💡 الملفات التي تضيفها من جهازك يتم حفظها محليًا
+            في هذا المتصفح باستخدام IndexedDB.
+        </p>
+
+
+        <div class="navigation">
+
+            <button
+                class="nav-button previous"
+                onclick="goTo('gifts')"
+            >
+                السابق
+            </button>
+
+            <button
+                class="nav-button next"
+                onclick="goTo('ending')"
+            >
+                التالي
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     MEDIA VIEWER
+================================================== -->
+
+<div
+    id="mediaViewer"
+    class="media-viewer"
+    onclick="closeViewer()"
+>
+
+    <button
+        class="close-viewer"
+        onclick="closeViewer()"
+    >
+        ×
+    </button>
+
+    <div
+        id="viewerContent"
+        onclick="event.stopPropagation()"
+    ></div>
+
+</div>
+
+
+<!-- ==================================================
+     ENDING
+================================================== -->
+
+<section id="ending" class="page">
+
+    <div class="ending-container">
+
+        <div class="ending-confetti">
+            🎉 🎊 🎈 ✨ 🎂 🍰 🎁
+        </div>
+
+        <div class="ending-cake">
+            🎂
+        </div>
+
+        <h1>
+            HAPPY BIRTHDAY
+        </h1>
+
+        <h2>
+            ZANJOUJI
+        </h2>
+
+        <div class="age">
+            16
+        </div>
+
+        <p>
+            عقبال الـ100 إن شاء الله 🤍
+        </p>
+
+        <div class="ending-confetti">
+            🍃 🎉 🍃 🎊 🍃
+        </div>
+
+
+        <div class="navigation">
+
+            <button
+                class="nav-button previous"
+                onclick="goTo('library')"
+            >
+                السابق
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
